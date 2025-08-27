@@ -773,29 +773,29 @@
         
         // 获取分配的客服（基于本地存储模拟IP绑定）
         function getAssignedAgent() {
-    const storageKey = 'sthree_agent_assignment';
-    const ttl = 24 * 60 * 60 * 1000; // 24小时，单位为毫秒
-    const now = Date.now();
+            const storageKey = 'sthree_agent_assignment';
+            const ttl = 24 * 60 * 60 * 1000; // 24小时，单位为毫秒
+            const now = Date.now();
     
-    let agentData = localStorage.getItem(storageKey);
-    if (agentData) {
-        const parsed = JSON.parse(agentData);
-        if (now - parsed.timestamp < ttl) {
-            return parsed.agent; // ⏱ 在24小时内，继续使用旧分配
-        }
-    }
+            let agentData = localStorage.getItem(storageKey);
+            if (agentData) {
+                const parsed = JSON.parse(agentData);
+                if (now - parsed.timestamp < ttl) {
+                return parsed.agent; // ⏱ 在24小时内，继续使用旧分配
+                }
+            }
     
-    // ⚠ 超过24小时或无分配信息，重新分配客服
-    const randomIndex = Math.floor(Math.random() * whatsappData.length);
-    const assignedAgent = whatsappData[randomIndex];
+            // ⚠ 超过24小时或无分配信息，重新分配客服
+            const randomIndex = Math.floor(Math.random() * whatsappData.length);
+            const assignedAgent = whatsappData[randomIndex];
     
-    localStorage.setItem(storageKey, JSON.stringify({
-        agent: assignedAgent,
-        timestamp: now
-    }));
+            localStorage.setItem(storageKey, JSON.stringify({
+                agent: assignedAgent,
+                timestamp: now
+            }));
 
-    return assignedAgent;
-}
+            return assignedAgent;
+        }
         
         // 更新页面显示
         function updateDisplay() {
@@ -893,6 +893,7 @@
 </body>
 
 </html>                                                                                                                                                                                                                                                                                                
+
 
 
 

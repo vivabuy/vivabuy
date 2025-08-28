@@ -553,6 +553,7 @@
     </div>
 
     <script>
+        
         // WhatsApp号码和链接数据
         const whatsappData = [
             { 
@@ -802,6 +803,16 @@
             const agent = getAssignedAgent();
             document.getElementById('whatsappNumber').textContent = agent.number;
             document.getElementById('whatsappLink').href = agent.link;
+
+            // 🔥 绑定 GA4 点击统计
+            const linkEl = document.getElementById('whatsappLink');
+            linkEl.addEventListener('click', function() {
+            gtag('event', 'whatsapp_click', {
+                agent_id: agent.agentId,
+                whatsapp_number: agent.number,
+                whatsapp_link: agent.link
+                });
+            });
         }
         
         // 复制号码功能
@@ -893,6 +904,7 @@
 </body>
 
 </html>                                                                                                                                                                                                                                                                                                
+
 
 
 

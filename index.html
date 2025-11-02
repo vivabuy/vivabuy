@@ -557,39 +557,44 @@
         // WhatsApp号码和链接数据
         const whatsappData = [
             { 
-                number: "+86 13559489518", 
-                link: "https://wa.me/8613559489518",
+                number: "+86 15860768190", 
+                link: "https://wa.me/8615860768190",
                 agentId: "agent-01"
             },
             { 
-                number: "+86 15080307106", 
-                link: "https://wa.me/8615080307106",
+                number: "+86 13616002447", 
+                link: "https://wa.me/8613616002447",
                 agentId: "agent-02"
             },
             { 
-                number: "+86 18064585856", 
-                link: "https://wa.me/8618064585856",
+                number: "+86 15260224147", 
+                link: "https://wa.me/8615260224147",
                 agentId: "agent-03"
+            },
+            { 
+                number: "+86 15105958540", 
+                link: "https://wa.me/8615105958540",
+                agentId: "agent-04"
+            },
+            { 
+                number: "+86 18450150145", 
+                link: "https://wa.me/8618450150145",
+                agentId: "agent-05"
+            },
+            { 
+                number: "+86 13656021545", 
+                link: "https://wa.me/8613656021545",
+                agentId: "agent-06"
             },
             { 
                 number: "+86 13459228624", 
                 link: "https://wa.me/8613459228624",
-                agentId: "agent-04"
-            },
-            { 
-                number: "+86 15259242147", 
-                link: "https://wa.me/8615259242147",
-                agentId: "agent-05"
-            },
-            { 
-                number: "+86 14759254250", 
-                link: "https://wa.me/8614759254250",
-                agentId: "agent-06"
-            },
-            { 
-                number: "+86 15206075010", 
-                link: "https://wa.me/8615206075010",
                 agentId: "agent-07"
+            },
+            { 
+                number: "+86 19722514830", 
+                link: "https://wa.me/8619722514830",
+                agentId: "agent-08"
             }
         ];
         
@@ -770,7 +775,7 @@
         // 获取分配的客服（基于本地存储模拟IP绑定）
         function getAssignedAgent() {
             const storageKey = 'sthree_agent_assignment';
-            const ttl = 12 * 60 * 60 * 1000; // 24小时，单位为毫秒
+            const ttl = 6 * 60 * 60 * 1000; // 24小时，单位为毫秒
             const now = Date.now();
     
             let agentData = localStorage.getItem(storageKey);
@@ -899,6 +904,7 @@
 </body>
 
 </html>                                                                                                                                                                                                                                                                                                
+
 
 
 
